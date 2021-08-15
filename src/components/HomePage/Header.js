@@ -22,10 +22,18 @@ export default function Header(props) {
                             <NavLink activeStyle={{ backgroundColor: '#fff', color: '#000' }} activeClassName="active" className="nav-link" to="/login">Login</NavLink>
                         </li>
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                            <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hooks</a>
                             <div className="dropdown-menu" aria-labelledby="dropdownId">
                                 <NavLink className="dropdown-item" to="/usestate">Use State</NavLink>
                                 <NavLink className="dropdown-item" to="/useeffect">Use Effect</NavLink>
+                                <NavLink className="dropdown-item" to="/reduxhook">Redux Hook</NavLink>
+                            </div>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Axios</a>
+                            <div className="dropdown-menu" aria-labelledby="dropdownId">
+                                <NavLink className="dropdown-item" to="/ajaxrcc">Ajax React Class</NavLink>
+                                <NavLink className="dropdown-item" to="/ajaxrfc">Ajax React Function</NavLink>
                             </div>
                         </li>
 
