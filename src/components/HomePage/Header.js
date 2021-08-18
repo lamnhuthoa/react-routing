@@ -34,6 +34,14 @@ export default function Header(props) {
                             <div className="dropdown-menu" aria-labelledby="dropdownId">
                                 <NavLink className="dropdown-item" to="/ajaxrcc">Ajax React Class</NavLink>
                                 <NavLink className="dropdown-item" to="/ajaxrfc">Ajax React Function</NavLink>
+                                <NavLink className="dropdown-item" to="/apimiddleware">Api Middle Ware</NavLink>
+                            </div>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Routing</a>
+                            <div className="dropdown-menu" aria-labelledby="dropdownId">
+                                <NavLink className="dropdown-item" to="/profile">Profile</NavLink>
+                                <NavLink className="dropdown-item" to="/hoc">HOC</NavLink>
                             </div>
                         </li>
 
