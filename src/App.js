@@ -15,27 +15,31 @@ import ApiMiddleWare from './pages/AxiosDemo/ApiMiddleWare';
 import Detail from './pages/Detail/Detail';
 import Profile from './pages/Profile/Profile';
 import HOC from './pages/HOC/HOC';
+import { HomeTemplate } from './Templates/HomeTemplate';
+import { UserTemplate } from './Templates/UserTemplate';
 
 
 function App() {
   return (
     <BrowserRouter>
-      <Header/>
+      {/* <HomeTemplate path="/home" component={HomeTemplate}/> */}
       <Switch>
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/usestate" component={UseStateDemo} />
-        <Route exact path="/useeffect" component={UseEffectDemo} />
-        <Route exact path="/reduxhook" component={ReduxHookDemo} />
-        <Route exact path="/ajaxrcc" component={AxiosDemoRCC} />
-        <Route exact path="/ajaxrfc" component={AxiosDemoRFC} />
-        <Route exact path="/apimiddleware" component={ApiMiddleWare} />
-        <Route exact path="/detail/:id" component={Detail} />
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/" component={ApiMiddleWare} />
-        <Route exact path="/hoc" component={HOC} />
+        <HomeTemplate path="/home" component={Home} />
+        <HomeTemplate path="/about" component={About} />
+
+        <UserTemplate path="/login" component={Login} />
+        <UserTemplate path="/register" component={Register} />
+        
+        <HomeTemplate exact path="/usestate" component={UseStateDemo} />
+        <HomeTemplate exact path="/useeffect" component={UseEffectDemo} />
+        <HomeTemplate exact path="/reduxhook" component={ReduxHookDemo} />
+        <HomeTemplate exact path="/ajaxrcc" component={AxiosDemoRCC} />
+        <HomeTemplate exact path="/ajaxrfc" component={AxiosDemoRFC} />
+        <HomeTemplate exact path="/apimiddleware" component={ApiMiddleWare} />
+        <HomeTemplate exact path="/detail/:id" component={Detail} />
+        <HomeTemplate exact path="/profile" component={Profile} />
+        <HomeTemplate exact path="/" component={ApiMiddleWare} />
+        <HomeTemplate exact path="/hoc" component={HOC} />
       </Switch>
     </BrowserRouter>
   );
