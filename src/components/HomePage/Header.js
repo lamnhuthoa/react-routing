@@ -42,6 +42,7 @@ export default function Header(props) {
                             <div className="dropdown-menu" aria-labelledby="dropdownId">
                                 <NavLink className="dropdown-item" to="/profile">Profile</NavLink>
                                 <NavLink className="dropdown-item" to="/hoc">HOC</NavLink>
+                                <NavLink className="dropdown-item" to="/admin/antd">Ant Design</NavLink>
                             </div>
                         </li>
 

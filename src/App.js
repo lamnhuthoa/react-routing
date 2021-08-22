@@ -17,6 +17,8 @@ import Profile from './pages/Profile/Profile';
 import HOC from './pages/HOC/HOC';
 import { HomeTemplate } from './Templates/HomeTemplate';
 import { UserTemplate } from './Templates/UserTemplate';
+import AntDemo from './pages/AntDemo/AntDemo';
+import { AdminTemplate } from './Templates/AdminTemplate';
 
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
 
         <UserTemplate path="/login" component={Login} />
         <UserTemplate path="/register" component={Register} />
+
+        {/* <HomeTemplate path="/antd" component={AntDemo} /> */}
         
         <HomeTemplate exact path="/usestate" component={UseStateDemo} />
         <HomeTemplate exact path="/useeffect" component={UseEffectDemo} />
@@ -40,6 +44,8 @@ function App() {
         <HomeTemplate exact path="/profile" component={Profile} />
         <HomeTemplate exact path="/" component={ApiMiddleWare} />
         <HomeTemplate exact path="/hoc" component={HOC} />
+
+        <AdminTemplate path="/antd" component={AntDemo}/>
       </Switch>
     </BrowserRouter>
   );
