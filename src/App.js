@@ -1,11 +1,11 @@
 import './App.css';
 //Cấu hình routing
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Router } from 'react-router-dom'
 import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
 import Register from './pages/Register/Register';
 import About from './pages/About/About';
-import Header from './components/HomePage/Header';
+// import Header from './components/HomePage/Header';
 import UseStateDemo from './pages/Hook/UseStateDemo/UseStateDemo';
 import UseEffectDemo from './pages/Hook/UseEffectDemo/UseEffectDemo';
 import ReduxHookDemo from './pages/Hook/ReduxHookDemo/ReduxHookDemo';
@@ -19,13 +19,18 @@ import { HomeTemplate } from './Templates/HomeTemplate';
 import { UserTemplate } from './Templates/UserTemplate';
 import AntDemo from './pages/AntDemo/AntDemo';
 import { AdminTemplate } from './Templates/AdminTemplate';
+//Thư viện giúp chuyển hướng trang ở các file, không phải là component
+import {createBrowserHistory} from 'history';
+
+export const history = createBrowserHistory();
 
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router history={history}>
       {/* <HomeTemplate path="/home" component={HomeTemplate}/> */}
       <Switch>
+        {/* <Route component={Home} /> */}
         <HomeTemplate path="/home" component={Home} />
         <HomeTemplate path="/about" component={About} />
 
@@ -47,7 +52,7 @@ function App() {
 
         <AdminTemplate path="/antd" component={AntDemo}/>
       </Switch>
-    </BrowserRouter>
+    </Router>
   );
 }
 

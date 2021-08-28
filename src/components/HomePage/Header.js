@@ -1,7 +1,19 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export default function Header(props) {
+
+    const {userLogin} = useSelector(state => state.QuanLyNguoiDungReducer);
+
+    const renderLogin = () => {
+        if(userLogin !== null){
+            return <NavLink activeStyle={{ backgroundColor: '#fff', color: '#000' }} activeClassName="active" className="nav-link" to="/profile">Hello {userLogin.taiKhoan}!</NavLink>
+        } else {
+            return <NavLink activeStyle={{ backgroundColor: '#fff', color: '#000' }} activeClassName="active" className="nav-link" to="/login">Login</NavLink>
+        }
+    }
+
     return (
         <div>
             <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -19,7 +31,7 @@ export default function Header(props) {
                             <NavLink activeStyle={{ backgroundColor: '#fff', color: '#000' }} activeClassName="active" className="nav-link" to="/register">Register</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink activeStyle={{ backgroundColor: '#fff', color: '#000' }} activeClassName="active" className="nav-link" to="/login">Login</NavLink>
+                            {renderLogin()}
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hooks</a>
@@ -42,7 +54,7 @@ export default function Header(props) {
                             <div className="dropdown-menu" aria-labelledby="dropdownId">
                                 <NavLink className="dropdown-item" to="/profile">Profile</NavLink>
                                 <NavLink className="dropdown-item" to="/hoc">HOC</NavLink>
-                                <NavLink className="dropdown-item" to="/admin/antd">Ant Design</NavLink>
+                                <NavLink className="dropdown-item" to="/antd">Ant Design</NavLink>
                             </div>
                         </li>
 
